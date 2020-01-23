@@ -3,15 +3,11 @@ services:
   php:
     restart: on-failure
     build:
-      context: ./php
+      context: ../php
       args:
         PHP_VERSION: ${PHP_VERSION}
-    depends_on:
-      - db
-      - web
     env_file:
       - ./.env
-      - ./.env.tests
     volumes:
       - ../php/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
       - ../..:/var/www/html

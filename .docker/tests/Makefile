@@ -33,9 +33,8 @@ logs:
 	@docker-compose logs -f -t --tail=1000
 
 setup:
-	@cd .. && make setup
-	@ln -sf $(PWD)/../.env $(PWD)/.env
-	@cp -n docker-compose.override.example.yml docker-compose.override.yml
+	@cp -n .env.dist .env
+	@cp -n docker-compose.override.yml.dist docker-compose.override.yml
 
 run: up
 	@docker-compose exec -T php ./vendor/bin/codecept run

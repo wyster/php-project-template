@@ -9,9 +9,6 @@ actor: FunctionalTester
 modules:
   enabled:
     # add a framework module here
-    - \Helper\Functional
-    - Application:
-        bootstrap: ./config/tests.php
+    - \Test\Helper\Functional
     - Asserts
-    - REST
   step_decorators: ~

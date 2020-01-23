@@ -1,5 +1,7 @@
 <?php declare(strict_types=1);
 
+namespace Test;
+
 /**
  * Inherited Methods
  * @method void wantToTest($text)
