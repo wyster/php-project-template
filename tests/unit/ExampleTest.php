@@ -1,4 +1,6 @@
-<?php namespace Test;
+<?php declare(strict_types=1);
+
+namespace Test;
 
 class ExampleTest extends \Codeception\Test\Unit
 {
@@ -6,7 +8,7 @@ class ExampleTest extends \Codeception\Test\Unit
      * @var \Test\UnitTester
      */
     protected $tester;
-    
+
     protected function _before()
     {
     }
@@ -18,6 +20,5 @@ class ExampleTest extends \Codeception\Test\Unit
     // tests
     public function testSomeFeature()
     {
-
     }
 }

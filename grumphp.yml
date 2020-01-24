@@ -1,11 +1,28 @@
 parameters:
-  git_hook_variables:
-    EXEC_GRUMPHP_COMMAND: 'cd .docker/tests && make up && docker-compose exec php'
+  testsuites:
+    ci:
+      tasks:
+        - phpcsfixer2
+        - codeception
+        - securitychecker
+        - phpstan
+        - phplint
+        - phpversion
+    git_commit_msg:
+      tasks:
+        - git_commit_message
+    git_pre_commit:
+      tasks:
+        - php_cs_auto_fixerv2
+        - phplint
   tasks:
     codeception: ~
     securitychecker:
       metadata:
         blocking: false
+    phpcsfixer2:
+      config: .php_cs.dist
+      allow_risky: true
     php_cs_auto_fixerv2:
       config: .php_cs.dist
       allow_risky: true
@@ -26,5 +43,8 @@ parameters:
             - test
         - scopes: []
     phpstan: ~
+    phplint: ~
+    phpversion:
+      project: '7.4'
   extensions:
     - Wearejust\GrumPHPExtra\Extension\Loader

@@ -9,15 +9,16 @@
   },
   "require-dev": {
     "codeception/codeception": "~4.0",
-    "codeception/module-phpbrowser": "~1.0.0",
     "codeception/module-asserts": "^1.0.0",
+    "codeception/module-phpbrowser": "~1.0.0",
     "codeception/module-rest": "~1.0.0",
     "friendsofphp/php-cs-fixer": "~2.15",
+    "jakub-onderka/php-parallel-lint": "~1.0",
     "phpro/grumphp": "~0.17",
-    "sensiolabs/security-checker": "~6.0",
-    "wearejust/grumphp-extra-tasks": "~2.2",
     "phpstan/phpstan": "~0.12.3",
-    "vimeo/psalm": "~3.8"
+    "sensiolabs/security-checker": "~6.0",
+    "vimeo/psalm": "~3.8",
+    "wearejust/grumphp-extra-tasks": "~2.2"
   },
   "autoload": {
     "psr-4": {
@@ -26,7 +27,12 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "Test\\": "tests/_support"
+      "Test\\": [
+        "tests/_support",
+        "tests/acceptance",
+        "tests/unit",
+        "tests/functional"
+      ]
     }
   },
   "config": {
