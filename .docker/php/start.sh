@@ -11,4 +11,6 @@ fi
 
 chmod 0777 ./tests/_output -R
 
+bash /wait-for.sh mysql:3306 -t 0 -- echo "Mysql started"
+
 docker-php-entrypoint php-fpm

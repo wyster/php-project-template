@@ -8,4 +8,9 @@ $dotenv->load();
 ?>
 Docker container <?=(int)getenv('COMPOSER_INSTALL') ? 'with' : 'without'; ?>  composer packages install
 
-<?=phpinfo(); ?>
+<?php
+$pdo = new PDO('mysql:dbname=example;host=mysql', 'dev', 'dev');
+
+echo 'Success db connect!';
+
+//phpinfo();

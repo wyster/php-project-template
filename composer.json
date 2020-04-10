@@ -6,7 +6,8 @@
   },
   "require": {
     "php": ">=7.4",
-    "vlucas/phpdotenv": "^4.1"
+    "ext-pdo": "*",
+    "vlucas/phpdotenv": "~4.1"
   },
   "require-dev": {
     "codeception/codeception": "~4.0",

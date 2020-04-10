@@ -13,6 +13,9 @@ RUN apt update && apt install -y \
 # XDebug
 RUN pecl install xdebug
 
+# MySQL
+RUN docker-php-ext-install -j$(nproc) pdo pdo_mysql
+
 # Other
 RUN docker-php-ext-install zip
 
@@ -22,3 +25,6 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 ADD ./start.sh /start.sh
 RUN chmod +x /start.sh
 CMD /start.sh
+
+ADD wait-for.sh /wait-for.sh
+RUN chmod 755 /wait-for.sh
