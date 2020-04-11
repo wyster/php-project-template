@@ -2,6 +2,7 @@ version: "3"
 services:
   php:
     container_name: ${PROJECT_NAME}_php
+    image: ${PROJECT_NAME}_php
     restart: on-failure
     build:
       context: ./php
