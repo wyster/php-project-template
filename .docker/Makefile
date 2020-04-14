@@ -44,8 +44,8 @@ tests: setup
 
 coverage: setup
 	@docker-compose -p ${PROJECT_NAME}_testing -f docker-compose.yml -f docker-compose.testing.yml up -d
-	@docker-compose -p ${PROJECT_NAME}_testing exec -T web bash /wait-for.sh --timeout=30 localhost:80 -- echo "Webserver started"
 	@docker-compose -p ${PROJECT_NAME}_testing exec -T php ./vendor/bin/codecept run --coverage --coverage-xml
+	@docker-compose -p ${PROJECT_NAME}_testing exec -T web bash /wait-for.sh --timeout=30 localhost:80 -- echo "Webserver started"
 	@docker-compose -p ${PROJECT_NAME}_testing stop
 
 ci: setup
