@@ -9,4 +9,6 @@ if [ $ENABLE_XDEBUG == "1" ]; then
     docker-php-ext-enable xdebug
 fi
 
+chmod 0777 ./tests/_output -R
+
 docker-php-entrypoint php-fpm
