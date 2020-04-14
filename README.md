@@ -1,3 +1,5 @@
+[![codecov](https://codecov.io/gh/wyster/php-project-template/branch/master/graph/badge.svg)](https://codecov.io/gh/wyster/php-project-template)
+
 # Запуск проекта
 
 Проект можно запустить через docker-compose, для этого нужно
